@@ -76,7 +76,12 @@ for file in uploaded_files:
         fig, ax = plt.subplots(1, 2, figsize=(10, 5))
         ax[0].imshow(dapi_image, cmap='gray')
         ax[0].set_title("Raw DAPI")
-        ax[1].imshow(dapi_mask, cmap='gray')
+        # Create RGB version with blue mask
+        blue_mask = np.zeros((*dapi_mask.shape, 3))
+        blue_mask[..., 2] = dapi_mask.astype(float)  # Blue channel
+
+        ax[1].imshow(blue_mask)
+
         ax[1].set_title("Segmented DAPI+ Cells")
         plt.tight_layout()
         st.pyplot(fig)
