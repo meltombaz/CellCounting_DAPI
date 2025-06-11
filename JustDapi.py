@@ -39,7 +39,7 @@ st.title("DAPI Cell Counting Web App 🔬")
 st.markdown(
     """
     <div style='text-align: center;'>
-        <iframe width="420" height="236" 
+        <iframe width="210" height="118" 
                 src="https://youtu.be/ic8j13piAhQ?si=bdkkHZyMv_WMy8sh" 
                 frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
                 encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
