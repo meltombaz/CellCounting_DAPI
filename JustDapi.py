@@ -34,7 +34,21 @@ st.markdown(
 
 # --- Title and Video ---
 st.title("DAPI Cell Counting Web App 🔬")
-st.video("https://youtu.be/ic8j13piAhQ?si=bdkkHZyMv_WMy8sh")
+
+
+st.markdown(
+    """
+    <div style='text-align: center;'>
+        <iframe width="420" height="236" 
+                src="https://youtu.be/ic8j13piAhQ?si=bdkkHZyMv_WMy8sh" 
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+                encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+        </iframe>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
 
 # --- Clear uploads button ---
 col1, col2 = st.columns([4, 1])
