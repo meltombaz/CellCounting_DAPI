@@ -72,19 +72,23 @@ for file in uploaded_files:
         "DAPI+ Cells": dapi_count
     })
 
-    with st.expander(f"🔬 Results for {sample}"):
-        fig, ax = plt.subplots(1, 2, figsize=(10, 5))
-        ax[0].imshow(dapi_image, cmap='gray')
-        ax[0].set_title("Raw DAPI")
-        # Create RGB version with blue mask
-        blue_mask = np.zeros((*dapi_mask.shape, 3))
-        blue_mask[..., 2] = dapi_mask.astype(float)  # Blue channel
+with st.expander(f"🔬 Results for {sample}"):
+    fig, ax = plt.subplots(1, 2, figsize=(10, 5))
+    
+    # Raw DAPI in grayscale
+    ax[0].imshow(dapi_image, cmap='gray')
+    ax[0].set_title("Raw DAPI")
+    ax[0].axis('off')
+    
+    # Segmented DAPI in blue
+    blue_mask = np.zeros((*dapi_mask.shape, 3))
+    blue_mask[..., 2] = dapi_mask.astype(float)
+    ax[1].imshow(blue_mask)
+    ax[1].set_title("Segmented DAPI+ Cells")
+    ax[1].axis('off')
 
-        ax[1].imshow(blue_mask)
-
-        ax[1].set_title("Segmented DAPI+ Cells")
-        plt.tight_layout()
-        st.pyplot(fig)
+    plt.tight_layout()
+    st.pyplot(fig)
 
 # --- Summary table ---
 if results:
