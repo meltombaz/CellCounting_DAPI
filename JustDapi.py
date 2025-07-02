@@ -15,21 +15,6 @@ st.set_page_config(page_title="DAPI Cell Counter", page_icon="🔬", layout="wid
 # --- Title and Video ---
 st.title("DAPI Cell Counting Web App 🔬")
 
-
-st.markdown(
-    """
-    <div style='text-align: center;'>
-        <iframe width="210" height="118" 
-                src="https://youtu.be/ic8j13piAhQ?si=bdkkHZyMv_WMy8sh" 
-                frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
-                encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-        </iframe>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-
-
 # --- Clear uploads button ---
 col1, col2 = st.columns([4, 1])
 with col2:
