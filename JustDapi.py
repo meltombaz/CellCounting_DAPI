@@ -11,26 +11,6 @@ if "upload_key" not in st.session_state:
 
 # --- Page config and style ---
 st.set_page_config(page_title="DAPI Cell Counter", page_icon="🔬", layout="wide")
-st.markdown(
-    """
-    <style>
-        body {
-            background-image: url('https://pbs.twimg.com/media/GmuT894XoAAGm5a?format=jpg&name=4096x4096');
-            background-size: cover;
-            color: white;
-        }
-        .stApp {
-            background: rgba(255, 182, 193, 0.8);
-            padding: 20px;
-            border-radius: 15px;
-        }
-        h1, h2, h3 {
-            color: #ff69b4;
-        }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
 
 # --- Title and Video ---
 st.title("DAPI Cell Counting Web App 🔬")
